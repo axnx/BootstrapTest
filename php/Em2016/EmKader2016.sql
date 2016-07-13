@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Kader(
 --CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 use em2016;
-LOAD DATA INFILE 'C:/Users/mstorost/Desktop/Em2016/EmKader2016.csv' 
+LOAD DATA INFILE 'C:/Users/user/Desktop/Em2016/EmKader2016.csv' 
 INTO TABLE kader FIELDS TERMINATED BY ';' IGNORE 1 LINES 
 (Nummer, Vorname, Nachname, @var1, Position,Heimatverein )
 SET Geburtsdatum = STR_TO_DATE(@var1,"%d.%m.%Y")
