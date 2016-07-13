@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+</head>
+<style>
+.selected {
+    background-color:black;
+    color:white;
+    font-weight:bold;
+}
+</style>
+<script>
+
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', function($scope, $http) {
+
+		$scope.test = function (msg) {
+			console.log(msg)
+		};
+	
+	
+	 $scope.selectedRow = null;  // initialize our variable to null
+	 $scope.setClickedRow = function(index){  //function that sets the value of selectedRow to current index
+     //$scope.selectedRow = index;
+		 //alert(index);
+   };
+	
+	 $scope.setRowClick = function(index){  //function that sets the value of selectedRow to current index
+		 alert(index);
+   };
+
+	 function reloadMe() {
+       window.location.reload();
+   };
+	 
+	 $scope.reloadPage = function() {
+			$window.location.reload();
+	 };
+		
+	 $scope.goto_detail = function(x) {
+			var url = 'www.web.de/';
+      //$location.url('www.web.de/' + id);
+			$scope.xobject = x;		
+			//alert(url + x.Id);
+			$http.get("http://localhost/ms1/delete.php?id=" + x.Id)
+				.then(function(response) {
+						$scope.myWelcome = response.data;
+						alert(xobject.id);
+			});
+			reloadMe();
+			//window.location.reload();
+			
+    };
+		
+		
+		
+		$scope.count = 0;
+		
+	  $scope.myFunc1 = function() {
+        $scope.count++;
+    };
+		
+		
+		$scope.myFunc2 = function() {
+        $scope.count = $scope.count + 2;
+    };
+
+
+    //$http.get("EMKader2016.json").then(function(response) {
+		$http.get("http://localhost/ms1/mysql2json.php").then(function(response) {
+        $scope.emkader = response.data;
+    });
+});	
+
+var d = Date.now();
+/*
+app.controller('myCtrl', function($scope) {
+    $scope.count = 0;
+		
+	  $scope.myFunc1 = function() {
+        $scope.count++;
+    };
+		
+		
+		$scope.myFunc2 = function() {
+        $scope.count = $scope.count + 2;
+    };
+});
+*/
+
+</script>
+
+
+<body>
+
+<div class="container">
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+<button ng-click="myFunc1()">Click me!</button>
+<button ng-click="myFunc2()">Click me!</button>
+<button ng-click="test('testmsg')">Click me!</button>
+<p>{{ count }}</p>
+<p>{{ index }}</p>
+<!-- </div> -->
+
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+
+<!-- <div ng-app="myApp" ng-controller="customersCtrl">	-->
+  <table class="table">
+    <thead>
+      <tr>
+				<th>index</th>
+        <th>Id</th>
+				<th>Nummer</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+				<th>Geburtsdatum</th>
+        <th>Position</th>
+				<th>Heimatverein</th>
+				<th></th>
+				<th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in emkader" ng-class="{'selected':$index == selectedRow}" ng-click="goto_detail(x)">
+				<td>{{$index}}</td>
+				<td>{{x.Id}}</td>
+        <td>{{x.Nummer}}</td>
+        <td>{{x.Vorname}}</td>
+        <td>{{x.Nachname}}</td>
+				<td>{{x.Geburtsdatum}}</td>
+        <td>{{x.Position}}</td>
+        <td>{{x.Heimatverein}}</td>
+				<td><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+				<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-edit"></span></button>
+  </button>
+      </tr>
+    </tbody>
+  </table>
+
+	<div ng-app="" ng-init="xobject">
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{xobject.Vorname}}</p>
+					<p>{{xobject.Nachname}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div> <!-- Angular -->
+</div> <!-- Container -->
+</body>
+</html>

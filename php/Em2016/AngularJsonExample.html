@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+</head>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('customersCtrl', function($scope) {
+			$scope.names = [
+				{ "Name" : "Max Joe", "City" : "Lulea", "Country" : "Sweden" },
+				{ "Name" : "Manish", "City" : "Delhi", "Country" : "India" },
+				{ "Name" : "Koniglich", "City" : "Barcelona", "Country" : "Spain" },
+				{ "Name" : "Wolski", "City" : "Arhus", "Country" : "Denmark" }
+			];
+	});
+</script>
+<body>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>angular test</p>            
+	
+	<div ng-app="myApp" ng-controller="customersCtrl">
+		<table class="table" >
+			<tr ng-repeat="x in names">
+			<td>{{x.Name}}</td>
+			<td>{{x.City}}</td>
+			<td>{{x.Country}}</td></tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>

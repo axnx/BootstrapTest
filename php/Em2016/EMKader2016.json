@@ -1,0 +1,218 @@
+[
+ {
+	 "Id": 1,
+   "Nummer": 1,
+   "Vorname": "Manuel",
+   "Nachname": "Neuer",
+   "Geburtsdatum": "27.03.1986",
+   "Position": "Tor",
+   "Heimatverein": "Bayern München"
+ },
+ {
+   "Id": 2,
+   "Nummer": 12,
+   "Vorname": "Bernd",
+   "Nachname": "Leno",
+   "Geburtsdatum": "04.03.1992",
+   "Position": "Tor",
+   "Heimatverein": "Bayer 04 Leverkusen"
+ },
+ {
+   "Id": 3,
+   "Nummer": 22,
+   "Vorname": "Marc-Andre",
+   "Nachname": "ter Stegen",
+   "Geburtsdatum": "30.04.1992",
+   "Position": "Tor",
+   "Heimatverein": "FC Barcelona"
+ },
+ {
+   "Id": 4,
+   "Nummer": 2,
+   "Vorname": "Shkodran",
+   "Nachname": "Mustafi",
+   "Geburtsdatum": "17.04.1992",
+   "Position": "Abwehr",
+   "Heimatverein": "FC Valencia"
+ },
+ {
+   "Id": 5,
+   "Nummer": 3,
+   "Vorname": "Jonas",
+   "Nachname": "Hector",
+   "Geburtsdatum": "27.05.1990",
+   "Position": "Abwehr",
+   "Heimatverein": "1.FC Köln"
+ },
+ {
+   "Id": 6,
+   "Nummer": 4,
+   "Vorname": "Benedikt",
+   "Nachname": "Höwedes",
+   "Geburtsdatum": "29.02.1988",
+   "Position": "Abwehr",
+   "Heimatverein": "FC Schalke 04"
+ },
+ {
+   "Id": 7,
+   "Nummer": 5,
+   "Vorname": "Mats",
+   "Nachname": "Hummels",
+   "Geburtsdatum": "16.12.1988",
+   "Position": "Abwehr",
+   "Heimatverein": "Borussia Dortmund"
+ },
+ {
+   "Id": 8,
+   "Nummer": 14,
+   "Vorname": "Emre",
+   "Nachname": "Can",
+   "Geburtsdatum": "12.01.1994",
+   "Position": "Abwehr",
+   "Heimatverein": "FC Liverpool"
+ },
+ {
+   "Id": 9,
+   "Nummer": 16,
+   "Vorname": "Antonio",
+   "Nachname": "Rüdiger",
+   "Geburtsdatum": "03.03.1993",
+   "Position": "Abwehr",
+   "Heimatverein": "AS Rom"
+ },
+ {
+   "Id": 10,
+   "Nummer": 16,
+   "Vorname": "Jonathan",
+   "Nachname": "Tah",
+   "Geburtsdatum": "11.02.1996",
+   "Position": "Abwehr",
+   "Heimatverein": "Bayer 04 Leverkusen"
+ },
+ {
+   "Id": 11,
+   "Nummer": 17,
+   "Vorname": "Jerome",
+   "Nachname": "Boateng",
+   "Geburtsdatum": "03.09.1988",
+   "Position": "Abwehr",
+   "Heimatverein": "Bayern München"
+ },
+ {
+   "Id": 12,
+   "Nummer": 6,
+   "Vorname": "Sami",
+   "Nachname": "Khedira",
+   "Geburtsdatum": "04.04.1987",
+   "Position": "Mittelfeld",
+   "Heimatverein": "Juventus Turin"
+ },
+ {
+   "Id": 13,
+   "Nummer": 7,
+   "Vorname": "(Kap.)Bastian",
+   "Nachname": "Schweinsteiger",
+   "Geburtsdatum": "01.08.1984",
+   "Position": "Mittelfeld",
+   "Heimatverein": "Manchester United"
+ },
+ {
+   "Id": 14,
+   "Nummer": 8,
+   "Vorname": "Mesut",
+   "Nachname": "Özil",
+   "Geburtsdatum": "15.10.1988",
+   "Position": "Mittelfeld",
+   "Heimatverein": "FC Arsenal"
+ },
+ {
+   "Id": 15,
+   "Nummer": 9,
+   "Vorname": "Andre",
+   "Nachname": "Schürrle",
+   "Geburtsdatum": "06.11.1990",
+   "Position": "Mittelfeld",
+   "Heimatverein": "VfL Wolfsburg"
+ },
+ {
+   "Id": 16,
+   "Nummer": 10,
+   "Vorname": "Lukas",
+   "Nachname": "Podolski",
+   "Geburtsdatum": "04.06.1985",
+   "Position": "Mittelfeld",
+   "Heimatverein": "Galatasary Istanbul"
+ },
+ {
+   "Id": 17,
+   "Nummer": 11,
+   "Vorname": "Julian",
+   "Nachname": "Draxler",
+   "Geburtsdatum": "20.09.1993",
+   "Position": "Mittelfeld",
+   "Heimatverein": "VfL Wolfsburg"
+ },
+ {
+   "Id": 18,
+   "Nummer": 13,
+   "Vorname": "Thomas",
+   "Nachname": "Müller",
+   "Geburtsdatum": "13.09.1985",
+   "Position": "Mittelfeld",
+   "Heimatverein": "Bayern München"
+ },
+ {
+   "Id": 19,
+   "Nummer": 15,
+   "Vorname": "Julian",
+   "Nachname": "Weigl",
+   "Geburtsdatum": "08.09.1995",
+   "Position": "Mittelfeld",
+   "Heimatverein": "Borussia Dortmund"
+ },
+ {
+   "Id": 20,
+   "Nummer": 18,
+   "Vorname": "Toni",
+   "Nachname": "Kroos",
+   "Geburtsdatum": "04.01.1990",
+   "Position": "Mittelfeld",
+   "Heimatverein": "Real Madrid"
+ },
+ {
+   "Id": 21,
+   "Nummer": 21,
+   "Vorname": "Joshua",
+   "Nachname": "Kimmich",
+   "Geburtsdatum": "08.02.1995",
+   "Position": "Mittelfeld",
+   "Heimatverein": "FC Bayern München"
+ },
+ {
+   "Id": 22,
+   "Nummer": 19,
+   "Vorname": "Mario",
+   "Nachname": "Götze",
+   "Geburtsdatum": "03.06.1992",
+   "Position": "Sturm",
+   "Heimatverein": "Bayern München"
+ },
+ {
+   "Id": 23,
+   "Nummer": 20,
+   "Vorname": "Leroy",
+   "Nachname": "Sané",
+   "Geburtsdatum": "11.01.1996",
+   "Position": "Sturm",
+   "Heimatverein": "FC Schalke 04"
+ },
+ {
+   "Id": 24,
+   "Nummer": 23,
+   "Vorname": "Mario",
+   "Nachname": "Gomez",
+   "Geburtsdatum": "10.07.1985",
+   "Position": "Sturm",
+   "Heimatverein": "Besiktas Istanbul"
+ }
+]
