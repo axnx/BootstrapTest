@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS 'user'(
 	created DateTime
 );
 
--- LOAD DATA INFILE 'C:/Users/mstorost/Desktop/Em2016/EmKader2016.csv' 
+-- LOAD DATA INFILE 'C:/Users/user/Desktop/Em2016/EmKader2016.csv' 
 LOAD DATA INFILE @insertfile
 INTO TABLE 'user' FIELDS TERMINATED BY ';' IGNORE 1 LINES 
 (username, password, salt, hash, email, active, deleted, created )
