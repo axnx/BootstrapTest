@@ -1,5 +1,5 @@
 SET @db = 'em2016';
-SET @inserfile = 'C:/Users/mstorost/Desktop/Em2016/EmKader2016.csv';
+SET @inserfile = 'C:/Users/user/Desktop/Em2016/EmKader2016.csv';
 
 USE @db;
 DROP TABLE IF EXISTS 'user';
