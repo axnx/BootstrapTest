@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+</head>
+<style>
+.selected {
+    background-color:black;
+    color:white;
+    font-weight:bold;
+}
+</style>
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', function($scope, $http) {
+		$http.get("http://localhost/ms1/formdb.php")
+			.then(function(response) {
+				$scope.formx = response.data;
+    });
+		
+		$scope.xbuttons = function() {
+        return $scope.formx[0].cssid + " " + $scope.formx[0].value;
+    };
+		
+		$scope.carname = "Volvo";	
+		$scope.carname1 = "BMW";	
+		//$scope.classdanger = "btn btn-danger";	
+		$scope.classdanger = "form-control";	
+		$scope.inputType = "text";	
+		//$scope.inputType = "button";	
+		$scope.value1 = "Testbutton";	
+		
+		var test = "";
+		
+		angular.forEach($scope.formx, function(value, key){
+				 $scope.test = key + ': ' + value;
+   });
+	 
+});	
+
+		
+</script>
+<body>
+<div class="container">
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+  <h2>Bootstrap forms from db</h2>
+  <p>creates bootstrap forms</p>            
+	<h1>{{carname}}</h1>
+	<h1>{{carname1}}</h1>
+	<p>{{ formx }}</p>
+	<!-- <button type="button" class="btn btn-danger">Default</button> -->
+	
+	<div ng-controller="customersCtrl">
+        <div ng-if="inputType =='button'">
+           <button type="{{inputType}}" ng-class="classdanger" ng:bind="value1"> />
+        </div>
+				<div ng-if="inputType =='text'">
+            <input type="{{inputType}}" ng-class="classdanger">
+        </div>
+	<div>
+	
+</div> <!-- Container -->
+</body>
+</html>
