@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+</head>
+<style>
+.selected {
+    background-color:black;
+    color:white;
+    font-weight:bold;
+}
+</style>
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', function($scope, $http) {
+		$http.get("button2.json")
+			.then(function(response) {
+				$scope.x = response.data;
+    });
+		
+		$scope.foo = function() {
+			alert('foo');
+		};
+		
+		$scope.goal = function() {
+			alert('goal!');
+		};
+		
+});	
+</script>
+
+<body>
+<div class="container">
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+	<!-- <h2>{{x}}</h2> -->
+  <h2>Bootstrap button</h2>
+  <p>creates bootstrap button</p>
+	<p>{{page}}</p>
+	<div ng-repeat="x in x.page">
+	<!-- <p>{{x.inputtype}}</p> -->
+		<div ng-switch on="x.inputtype">	
+			<div ng-switch-when="h2">
+					<h2>{{x.value}}<h2>			
+			</div>
+		</div>
+		<div ng-switch on="x.inputtype">	
+			<div ng-switch-when="p" >
+					<p class="{{x.class}}">{{x.value}}</p>			
+			</div>
+		</div>
+		<div ng-switch on="x.inputtype">	
+			<div ng-switch-when="h4">
+					<h4>{{x.value}}</h4>			
+			</div>
+		</div>
+		<div ng-switch on="x.inputtype">	
+			<div ng-switch-when="button">
+					<button ng-attr-id="{{x.cssid}}" type="button" class="{{x.class}}" ng-click="$eval(x.fn)">{{x.value}}</button><br>			
+			</div>
+		</div>
+	</div>
+</div> <!-- Controller -->
+</div> <!-- Container -->
+</body>
+</html>

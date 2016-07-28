@@ -1,0 +1,27 @@
+{
+	"page": [{
+		"inputtype": "h2",
+		"value": "testvalue h2"
+	}, {
+		"inputtype": "p",
+		"value": "testvalue p",
+		"class": "class"
+	}, {
+		"inputtype": "h4",
+		"value": "testvalue h4"
+	}, {
+		"id": "2",
+		"position": "1",
+		"cssid": "id1",
+		"class": "btn btn-info",
+		"inputtype": "button",
+		"value": "testbutton",
+		"parentId": "0",
+		"label": "0",
+		"labelFor": "id1",
+		"disabled": "0",
+		"active": "1",
+		"deleted": "0",
+		"fn": "foo()"
+	}]
+}

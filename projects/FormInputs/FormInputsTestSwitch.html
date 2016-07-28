@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+</head>
+<style>
+.selected {
+    background-color:black;
+    color:white;
+    font-weight:bold;
+}
+</style>
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', function($scope, $http) {
+		$http.get("formInputs.json")
+			.then(function(response) {
+				$scope.formx = response.data;
+    });
+
+		$scope.myFunc = function($index){
+        alert("I am an alert box1!"+ $index );
+    }	
+		
+});	
+</script>
+<script>
+		function myFunc() {
+				alert("I am an alert box2!");
+		}
+</script>
+<body>
+<div class="container">
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+  <h2>Bootstrap forms from db</h2>
+  <p>creates bootstrap forms</p>            
+	<div ng-repeat="x in formx.childs">
+		<div ng-switch on="x.inputtype">
+				
+				<div ng-switch-when="pageheader">
+					<div class="page-header">
+						<h1>{{x.p}}</h1>
+						<p>{{x.p}}</p>
+					</div>
+				</div>
+				
+				<div ng-switch-when="button">
+					<button ng-attr-id="{{x.cssid}}" type="button" class="{{x.class}}" ng-click="myFunc($index)">{{x.value}}</button><br>
+				</div>
+				<div ng-switch-when="input">
+					<div class="form-group">
+						<label for="{{x.cssid}}">{{x.label}}</label>
+						<input type="input" class="{{x.class}}" ng-attr-id="{{x.cssid}}" maxlength="{{x.maxlength}}" pattern="{{x.pattern}}" placeholder="{{x.placeholder}}" required="true">
+					</div>
+				</div>
+				<div ng-switch-when="password">
+					<div class="form-group">
+						<label for="{{x.cssid}}">{{x.label}}</label>
+						<input type="{{x.inputtype}}" class="{{x.class}}" ng-attr-id="{{x.cssid}}">
+					</div>
+				</div>
+			  <div ng-switch-when="image">
+					  <img src="{{x.src}}" class="{{x.class}}" ng-attr-id="{{x.cssid}}" alt="{{x.alt}}" width="{{x.width}}" height="{{x.height}}">
+				</div>
+				<div ng-switch-when="pagination">
+			    <ul class="pagination">
+						<li ng-repeat="x in x.list"  class="{{x.class}}"><a ng-href="{{x.href}}">{{x.value}}</a></li>
+					</ul>
+        </div>
+				<div ng-switch-when="table">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th ng-repeat="x in x.thead">{{x}}</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <p>{{x.tdata.length}}</p>
+							<tr ng-repeat="x in x.tdata">
+								<td ng-repeat="y in x">{{y}}</th>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- table -->
+					
+				<div ng-switch-when="dropdown">
+				<div class="dropup">
+					<button class="{{x.class}}" type="button" data-toggle="dropdown">{{x.caption}}
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li ng-repeat="x in x.list" class="{{x.class}}"><a ng-href="{{x.href}}">{{x.value}}</a></li>				
+					</ul>
+				</div>
+				</div>
+		</div>
+	</div>
+	<button onclick="myFunc()">Click me</button>
+</div> <!-- Container -->
+</body>
+</html>

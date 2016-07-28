@@ -1,0 +1,156 @@
+{
+	"id": "1",
+	"position": "0",
+	"cssid": "id0",
+	"class": "container",
+	"inputtype": "div",
+	"value": null,
+	"parentId": "0",
+	"label": null,
+	"labelFor": null,
+	"disabled": "0",
+	"active": "1",
+	"deleted": "0",
+	"childs": [
+		{
+			"id": "1",
+			"position": "1",
+			"cssid": "pageheader1",
+			"inputtype": "pageheader",
+			"elements": [
+					{
+						"p": "This is some text",
+						"h1": "Example Page Header"
+					}]
+		},{
+			"id": "2",
+			"position": "1",
+			"cssid": "id1",
+			"class": "btn btn-info",
+			"inputtype": "button",
+			"value": "testbutton",
+			"parentId": "0",
+			"label": "0",
+			"labelFor": "id1",
+			"disabled": "0",
+			"active": "1",
+			"deleted": "0",
+			"click": "myFunc()"
+		}, {
+			"id": "3",
+			"position": "2",
+			"cssid": "usr",
+			"class": "form-control",
+			"inputtype": "input",
+			"value": "button2",
+			"parentId": "0",
+			"label": "your username",
+			"labelFor": "id2",
+			"disabled": "0",
+			"active": "1",
+			"deleted": "0",
+			"maxlength": "15",
+			"placeholder": "Confirm",
+			"pattern": "^[_A-z0-9]{1,}$",
+			"required" : true
+		}, {
+			"id": "4",
+			"position": "3",
+			"cssid": "login",
+			"class": "form-control",
+			"inputtype": "password",
+			"value": "password",
+			"parentId": "0",
+			"label": "your password",
+			"labelFor": "id2",
+			"disabled": "0",
+			"active": "1",
+			"deleted": "0"
+		}, {
+			"id": "5",
+			"position": "4",
+			"cssid": "btnLogin",
+			"class": "btn btn-primary",
+			"inputtype": "button",
+			"value": "Login",
+			"parentId": "0",
+			"label": "your password",
+			"labelFor": "id2",
+			"disabled": "0",
+			"active": "1",
+			"deleted": "0",
+			"click": "myFunc()"
+		}, {
+			"id": "6",
+			"position": "5",
+			"cssid": "imgPic1",
+			"class": "img-rounded",
+			"src": "http://www.w3schools.com/bootstrap/paris.jpg",
+			"alt": "Cinque Terre",
+			"width": "100",
+			"height": "200",
+			"inputtype": "image"
+		}, {
+			"inputtype": "pagination",
+			"id": "7",
+			"position": "6",
+			"cssid": "pag1",
+			"class": "pagination",
+			"list": [{
+				"value": "A",
+				"href": "#A",
+				"class": "active"
+			}, {
+				"value": "B",
+				"href": "#B",
+				"class": "disabled"
+			}, {
+				"value": "C",
+				"href": "#C",
+				"class": ""
+			}, {
+				"value": "D",
+				"href": "#D",
+				"class": ""
+			}]
+		}, 
+		{
+			"inputtype": "table",
+			"id": "8",
+			"cssid": "table1",
+			"class": "table",
+			"thead": ["Firstname", "Lastname", "Email"],
+			"tdata": [
+					["John", "Doe", "john@example.com"],
+					["Mary", "Moe", "mary@example.com"],
+					["July", "Dooley", "july@example.com"],
+					["Tom", "Daaley", "tom@example.com"]
+			]
+		}, {
+			"id": "9",
+			"position": "9",
+			"inputtype": "dropdown",
+			"cssid": "dropdown1",
+			"class": "btn btn-primary dropdown-toggle",
+			"caption": "dropdown example",
+		  "list": [{
+				"value": "A",
+				"href": "#A",
+				"class": ""
+			}, {
+				"value": "B",
+				"href": "#B",
+				"class": ""
+			}, {
+				"value": "C",
+				"href": "#C",
+				"class": "divider"
+			}, {
+				"value": "D",
+				"href": "#D",
+				"class": ""
+			}]
+			
+		}
+	]
+}
